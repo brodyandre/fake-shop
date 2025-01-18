@@ -20,8 +20,8 @@ jobs:
       - name: Construção da imagem Docker
         run: echo "Executando o comando Docker Build"
 
-        -
-        name: Construção e Envio da Imagem Docker
+        
+      - name: Construção e Envio da Imagem Docker
         uses: docker/build-push-action@v6
         with:
           context: ./src
