@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   ci:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
       - name: Obter o código do projeto
         uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
         run: "Executando o comando Docker push"  
 
   cd:
-    runs-on: macos-11
+    runs-on: macos-latest
     needs: [ci]
     steps:
       - name: Autenticar na AWS
