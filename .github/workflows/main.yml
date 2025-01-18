@@ -36,7 +36,7 @@ jobs:
     needs: [ci]
     steps:
      - name: Obter o código do projeto
-       uses: actions/checout@v4
+       uses: actions/checkout@v4
        
      - name: Autenticar na AWS
        uses: aws-actions/configure-aws-credentials@v4
