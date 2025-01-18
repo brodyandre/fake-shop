@@ -19,8 +19,17 @@ jobs:
 
       - name: Construção da imagem Docker
         run: echo "Executando o comando Docker Build"
-      - name: Envio da imagem Docker
-        run: echo "Executando o comando Docker push"  
+
+        -
+        name: Construção e Envio da Imagem Docker
+        uses: docker/build-push-action@v6
+        with:
+          context: ./src
+          push: true
+          file: ./src/Dockerfile
+          tags: |
+            las43/fake-shop:latest
+            las43/fake-shop:v${{github.run_number }}  
 
   cd:
     runs-on: ubuntu-latest
