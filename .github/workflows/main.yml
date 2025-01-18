@@ -6,21 +6,21 @@ on:
   workflow_dispatch:
 jobs:
   ci:
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - name: Autenticar do Docker Hub
         run: echo "Executando o Docker Login"
       - name: Construção da imagem Docker
-        run: echo "Executando o comando Docker Build"
+        run: echo "Executando o comando Docker Login"
       - name: Envio da imagem Docker
         run: "Executando o comando Docker push"
 
   cd:
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - name: Autenticar na AWS
         run: echo "Executando o comando aws configure"
       - name: Configurar o kubectl
         run: echo "Executar o comando aws eks update-kubeconfig"
       - name: Deploy dos manifestos no Kubernetes
-        run: "Executando o comando Kubectl apply"
+        run: echo "Executando o comando Kubectl apply"
