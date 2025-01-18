@@ -17,6 +17,7 @@ jobs:
 
   cd:
     runs-on: macos-11
+    needs: [ci]
     steps:
       - name: Autenticar na AWS
         run: echo "Executando o comando aws configure"
